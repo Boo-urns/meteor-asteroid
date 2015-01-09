@@ -1,0 +1,17 @@
+<head>
+  <title>asteroid-test</title>
+</head>
+
+<body>
+  <h1>Meteor Simpsons List!</h1>
+
+  {{> list}}
+</body>
+
+<template name="list">
+	<ul>
+  {{#each simpsonsCharacters}}
+  	<li>{{name}} <small>{{_id}}</small></li>
+  {{/each}}
+  </ul>
+</template>

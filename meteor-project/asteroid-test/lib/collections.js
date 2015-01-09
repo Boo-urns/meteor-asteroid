@@ -1,0 +1,1 @@
+Simpsons  = new Mongo.Collection('simpsons');
