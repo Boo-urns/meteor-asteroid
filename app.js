@@ -1,3 +1,12 @@
+	// $(function(){
+		
+	// 	var test = { character: [
+	// 			simpsonsList.result
+	// 		]};
+
+	// 	$('#characters').html(charTpl(test));
+	// });
+
 // Connect to a Meteor backend
 var simpsonsBackend = new Asteroid("localhost:3000");
 
@@ -12,7 +21,19 @@ simpsons.insert({
 var simpsonsList = simpsons.reactiveQuery({});
 // Log the array of results
 console.log(simpsonsList.result);
+
+
+var charTplScript = $('#character-tpl').html();
+var charTpl = Handlebars.compile(charTplScript);
+
+
+
 // Listen for changes
 simpsonsList.on("change", function () {
   console.log(simpsonsList.result);
+  var test = { character: simpsonsList.result };
+
+	$('#characters').html(charTpl(test));
 });
+
+

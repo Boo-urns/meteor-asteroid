@@ -5,12 +5,25 @@
 <script src="bower_components/ddp.js/src/ddp.js"></script>
 <script src="bower_components/q/q.js"></script>
 <script src="bower_components/asteroid/dist/asteroid.browser.js"></script>
-<script src="app.js"></script>
+<script src="handlebars-v2.0.0.js"></script>
 </head>
 <body>
 
 <h1>Meteor Asteroid Test</h1>
 <p>Check console.</p>
+
+<ul id="characters"></ul>
+
+
+<script id="character-tpl" type="text/x-handlebars-template">
+	{{#each character}}
+		<li>{{name}}</li>
+	{{/each}}
+</script>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
