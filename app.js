@@ -3,12 +3,13 @@ var simpsonsBackend = new Asteroid("localhost:3000");
 
 // Use real-time collections
 simpsonsBackend.subscribe("theSimpsons");
-var simpsons = simpsonsBackend.getCollection("Simpsons");
-// tasks.insert({
-//   description: "Do the laundry"
-// });
+var simpsons = simpsonsBackend.getCollection("simpsons");
+simpsons.insert({
+   name: "Barney",
+   lastname: "Gumble"
+});
 // Get the task
-var simpsonsList = simpsons.reactiveQuery();
+var simpsonsList = simpsons.reactiveQuery({});
 // Log the array of results
 console.log(simpsonsList.result);
 // Listen for changes
